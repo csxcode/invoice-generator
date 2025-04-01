@@ -1,0 +1,39 @@
+{
+	"assets": {
+		"logo": "/Users/csxcode/projects/personal/invoice-generator/assets/logo.png",
+		"signature": "/Users/csxcode/projects/personal/invoice-generator/assets/signature.png"
+	},
+	"header": {
+		"title": "March 2025 Invoice"
+	},
+	"items": [
+		{
+			"description": "Worked Hours",
+			"qty": 160,
+			"value": 2
+		},
+		{
+			"description": "On-call (4 days)",
+			"qty": 16,
+			"value": 4
+		},
+		{
+			"description": "ChatGPT",
+			"qty": 1,
+			"value": 10
+		}
+	],
+	"sender": {
+		"name": "Jesse Music",
+		"identityDocument": "DNI 123456789"
+	},
+	"consignment": {
+		"address": "xxx, Antarctica",
+		"cellphone": "(+0) 123456789",
+		"bank": "Universe Bank",
+		"accountNumber": "111-111111111",
+		"cci": "111-111-11111111-11",
+		"swiftCode": "XXXCODE",
+		"beneficiary": "Jesse Music"
+	}
+}

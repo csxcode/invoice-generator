@@ -1,0 +1,20 @@
+{
+	"name": "invoice-generator",
+	"version": "1.0.0",
+	"description": "Generate elegant invoices in PDF from JSON data",
+	"main": "src/index.ts",
+	"scripts": {
+		"start": "ts-node src/index.ts"
+	},
+	"dependencies": {
+		"@types/wkhtmltopdf": "^0.3.9",
+		"ejs": "^3.1.9",
+		"puppeteer": "^24.5.0",
+		"wkhtmltopdf": "^0.4.0"
+	},
+	"devDependencies": {
+		"@types/ejs": "^3.1.5",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.3.3"
+	}
+}
