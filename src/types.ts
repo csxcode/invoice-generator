@@ -1,7 +1,8 @@
 export interface InvoiceItem {
 	description: string;
 	qty: number;
-	value: number;
+	value: string;
+	total: string;
 }
 
 export interface InvoiceData {
@@ -9,5 +10,5 @@ export interface InvoiceData {
 	header: {title: string};
 	items: InvoiceItem[];
 	sender: {name: string; identityDocument: string};
-	total: number;
+	total: string;
 }

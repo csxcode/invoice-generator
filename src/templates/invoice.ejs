@@ -103,17 +103,17 @@
               <%= item.qty %>
             </td>
             <td>
-              $<%= item.value.toFixed(2) %>
+              $<%= item.value %>
             </td>
             <td>
-              $<%= (item.qty * item.value).toFixed(2) %>
+              $<%= item.total %>
             </td>
           </tr>
           <% }); %>
             <tr>
               <td colspan="3" style="text-align: right;"><b>Total</b></td>
               <td>
-                <b>$<%= data.total.toFixed(2) %></b>
+                <b>$<%= data.total %></b>
               </td>
             </tr>
       </tbody>

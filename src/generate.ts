@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import puppeteer from 'puppeteer';
 import {InvoiceData} from './types';
+import numeral from 'numeral';
 
 export async function generate(data: InvoiceData): Promise<void> {
 	const templatePath = path.join(__dirname, './templates/invoice.ejs');
@@ -11,7 +12,16 @@ export async function generate(data: InvoiceData): Promise<void> {
 	const logoImage = fs.readFileSync(data.assets.logo, 'base64');
 	const signatureImage = fs.readFileSync(data.assets.signature, 'base64');
 
-	data.total = data.items.reduce((acc, item) => acc + item.qty * item.value, 0);
+	data.items.forEach((item) => {
+		item.total = numeral(Number(item.qty) * Number(item.value)).format('0,0');
+		item.value = numeral(item.value).format('0,0');
+	});
+	const total = data.items.reduce(
+		(acc, item) => acc + Number(numeral(item.total).value()),
+		0
+	);
+
+	data.total = numeral(total).format('0,0');
 
 	const html = ejs.render(template, {
 		data,
